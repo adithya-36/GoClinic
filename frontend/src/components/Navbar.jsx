@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
 //image of dropdown icon to be placed
     <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-gray-400'>
-      <img className='w-20 h-11 cursor-pointer ' src={Logo} alt="logo" />
+      <img onClick={()=> navigate('/')} className='w-20 h-11 cursor-pointer ' src={Logo} alt="logo" />
       <ul className='hidden md:flex items-start gap-5 font-medium'>
         <NavLink to={'/'}>
           <li className='py-1'>HOME</li>
