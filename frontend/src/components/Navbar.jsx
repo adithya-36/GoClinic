@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Logo from '../assets/logo.png'
 import Profile from '../assets/image.png'
+import Down from '../assets/down-arrow.png'
 import { NavLink, useNavigate } from 'react-router-dom'
 const Navbar = () => {
   const navigate = useNavigate()
@@ -33,7 +34,7 @@ const Navbar = () => {
           token
           ? <div className='flex items-center gap-2 cursor-pointer group relative'> 
             <img className='w-8 rounded-full' src={Profile} alt="image" />
-            <button> V </button>
+            <img className='w-4' src={Down} alt="Down-arrow" />
             <div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20 hidden group-hover:block '>
               <div className='min-w-48 bg-stone-100 rounded flex  flex-col gap-4 p-4'>
                 <p onClick={()=>navigate('/my-profile')} className='hover:text-black cursor-pointer'>My Profile</p>
