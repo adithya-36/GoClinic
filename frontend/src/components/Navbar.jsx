@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Logo from '../assets/logo.png'
 import Profile from '../assets/image.png'
+import MenuIcon from '../assets/menu.png'
 import Down from '../assets/down-arrow.png'
+import CLoseIcon from '../assets/close.png'
 import { NavLink, useNavigate } from 'react-router-dom'
 const Navbar = () => {
   const navigate = useNavigate()
@@ -46,7 +48,20 @@ const Navbar = () => {
           
           :<button onClick={()=>navigate('/login')} className='bg-primary text-white py-3 px-8 rounded-full font-light hidden md:block'>Create Account</button>
         }
-        
+        <img onClick={()=>setShowMenu(true)} className='w-6 md:hidden' src={MenuIcon} alt="" />
+        {/*---mobile menu ----*/}
+        <div className={`${showMenu? 'fixed w-full': 'h-0 w-0'} md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}>
+          <div className='flex items-center justify-between'>
+            <img className='w-36' src={Logo} alt="" />
+            <img className='w-7' onClick={()=>setShowMenu(false)} src={CLoseIcon} alt="" />
+          </div>
+          <ul className='flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium'>
+            <NavLink  onClick={()=>setShowMenu(false)} to='/'> <p className='px-4 py-2 rounded inline-block'>Home</p> </NavLink>
+            <NavLink  onClick={()=>setShowMenu(false)} to='/doctors'> <p className='px-4 py-2 rounded inline-block'>ALL DOCTORS</p> </NavLink>
+            <NavLink  onClick={()=>setShowMenu(false)} to='/about'> <p className='px-4 py-2 rounded inline-block'>ABOUT</p> </NavLink>
+            <NavLink  onClick={()=>setShowMenu(false)} to='/contact'> <p className='px-4 py-2 rounded inline-block'>CONTACT</p> </NavLink>
+          </ul>
+        </div>
       </div>
     </div>
   )
