@@ -1,0 +1,17 @@
+https://localhost:4000/api/admin/add-doctor
+Content-Type: application/json
+
+{
+  "name": "Dr. Jane Smith",
+  "email": "jane@gmail.com",
+  "image": "doctor2.jpg",
+  "speciality": "Gynecologist",
+  "degree": "MBBS, MD",
+  "experience": "8 years",
+  "about": "Dr. Jane Smith is a dedicated gynecologist with eight years of experience in women's health. She is committed to providing personalized care and support to her patients.",
+  "fee": 600,
+  "address": {
+    "line1": "456 Wellness Avenue",
+    "line2": "Women’s Clinic"
+  }
+}
